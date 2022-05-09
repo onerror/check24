@@ -17,6 +17,7 @@
         "phpunit/phpunit": "^9.5",
         "ext-pdo": "*",
         "voku/simple-active-record": "1.*",
-        "doctrine/orm": "*"
+        "doctrine/orm": "*",
+        "devcoder-xyz/php-router": "^1.2"
     }
 }
