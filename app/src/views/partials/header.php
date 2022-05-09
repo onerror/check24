@@ -1,5 +1,7 @@
 <?php
 
+use Helpers\UserHelper;
+
 session_start();
 
 ?>
@@ -22,4 +24,10 @@ session_start();
 <body class="d-flex flex-column min-vh-100">
 <div id = "main_header" class="navbar">
 	<a href="https://localhost"><img src="https://via.placeholder.com/150"/></a><span>Blog Name</span>
+</div>
+<div id = "navigation">
+	<a href="http://localhost/">Ubersicht</a>
+	<?php if(UserHelper::loggedIn()) { ?><a href="http://localhost/create_article">Neuer Eintrag</a><?php } ?>
+	<a href="http://localhost/impressum">Impressum</a>
+	
 </div>
