@@ -20,16 +20,12 @@ class LoginController
         $usernameError = $passwordError = "";
         
         ?>
-
-		<!-- Main -->
+		    
 		<main class="main">
 
-			<!-- Latest Articles -->
-			<div class="section jumbotron mb-0 h-100">
-				<!-- container -->
+
 				<div class="container d-flex flex-column justify-content-center align-items-center h-100">
 
-					<!-- row -->
 					<div class="wrapper bg-white rounded px-4 py-4 w-50">
 
 						<form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="POST">
@@ -54,8 +50,7 @@ class LoginController
 
 
 				</div>
-
-			</div>
+			
 		</main>
         
         <?php
