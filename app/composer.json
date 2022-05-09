@@ -18,6 +18,7 @@
         "ext-pdo": "*",
         "voku/simple-active-record": "1.*",
         "doctrine/orm": "*",
-        "devcoder-xyz/php-router": "^1.2"
+        "devcoder-xyz/php-router": "^1.2",
+        "twig/twig": "2.0"
     }
 }

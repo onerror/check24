@@ -1,7 +1,9 @@
 <?php
 
 namespace Models;
-// todo
+
+// todo find for a better implementation, turned out not really safe, PDO and|or needed
+
 use voku\db\ActiveRecord;
 
 /**
