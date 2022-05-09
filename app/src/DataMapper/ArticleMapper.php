@@ -1,6 +1,10 @@
 <?php
 
-class UserMapper extends MapperAbstract
+namespace DataMapper;
+
+use Article\Article;
+
+class ArticleMapper extends MapperAbstract
 {
     private $dbAdapter;
     
@@ -14,7 +18,7 @@ class UserMapper extends MapperAbstract
      */
     protected function _create()
     {
-        return new User();
+        return new Article();
     }
     
     /**

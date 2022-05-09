@@ -15,6 +15,8 @@
         "monolog/monolog": "^2.5",
         "ext-json": "*",
         "phpunit/phpunit": "^9.5",
-        "ext-pdo": "*"
+        "ext-pdo": "*",
+        "voku/simple-active-record": "1.*",
+        "doctrine/orm": "*"
     }
 }

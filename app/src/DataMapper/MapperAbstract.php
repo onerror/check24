@@ -1,5 +1,9 @@
 <?php
 
+namespace DataMapper;
+
+use PDO;
+
 abstract class MapperAbstract
 {
     /**
@@ -15,7 +19,7 @@ abstract class MapperAbstract
      *
      * @return DomainObjectAbstract
      */
-    public function create(array $data = null)
+    public function create(array $data = [])
     {
         $obj = $this->_create();
         if ($data) {
