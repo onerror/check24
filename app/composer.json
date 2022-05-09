@@ -1,0 +1,20 @@
+{
+    "name": "pyast/check24_task",
+    "autoload": {
+        "psr-4": {
+            "": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "e.pyastolov",
+            "email": "pyastolov.e.s@effective-group.ru"
+        }
+    ],
+    "require": {
+        "monolog/monolog": "^2.5",
+        "ext-json": "*",
+        "phpunit/phpunit": "^9.5",
+        "ext-pdo": "*"
+    }
+}
