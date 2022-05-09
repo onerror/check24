@@ -23,15 +23,15 @@ session_start();
 </head>
 <body class="d-flex flex-column min-vh-100">
 <div id = "main_header" class="navbar">
-	<a href="https://localhost"><img src="https://via.placeholder.com/150"/></a><span>Blog Name</span>
+	<a href="/"><img src="https://via.placeholder.com/150"/></a><span>Blog Name</span>
 </div>
 <div id = "navigation">
-	<a href="http://localhost/">Ubersicht</a>
-	<?php if(UserHelper::loggedIn()) { ?><a href="http://localhost/create_article">Neuer Eintrag</a><?php } ?>
-	<a href="http://localhost/impressum">Impressum</a>
-    <?php if (UserHelper::loggedIn()) { ?><a href="http://localhost/logout">Logout</a><?php }
+	<a href="/">Ubersicht</a>
+	<?php if(UserHelper::loggedIn()) { ?><a href="/create_article">Neuer Eintrag</a><?php } ?>
+	<a href="/impressum">Impressum</a>
+    <?php if (UserHelper::loggedIn()) { ?><a href="/logout">Logout</a><?php }
     else {
-        ?><a href="http://localhost/logout">Login</a><?php
+        ?><a href="/login">Login</a><?php
     }?>
 
 </div>
