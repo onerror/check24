@@ -29,5 +29,9 @@ session_start();
 	<a href="http://localhost/">Ubersicht</a>
 	<?php if(UserHelper::loggedIn()) { ?><a href="http://localhost/create_article">Neuer Eintrag</a><?php } ?>
 	<a href="http://localhost/impressum">Impressum</a>
-	
+    <?php if (UserHelper::loggedIn()) { ?><a href="http://localhost/logout">Logout</a><?php }
+    else {
+        ?><a href="http://localhost/logout">Login</a><?php
+    }?>
+
 </div>
