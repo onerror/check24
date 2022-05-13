@@ -1,5 +1,5 @@
 {
-    "name": "pyast/check24_task",
+    "name": "pyast/test_task",
     "autoload": {
         "psr-4": {
             "": "src/"
@@ -8,7 +8,7 @@
     "authors": [
         {
             "name": "e.pyastolov",
-            "email": "pyastolov.e.s@effective-group.ru"
+            "email": "pyastolov@gmail.com"
         }
     ],
     "require": {

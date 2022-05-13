@@ -1,6 +1,6 @@
 <?php
 
-use Controllers\ArticleController;
+use Controllers\DashboardController;
 use Controllers\ArticlesController;
 use Controllers\LoginController;
 use Models\User;
@@ -9,24 +9,24 @@ use voku\db\DB;
 require __DIR__ . '/../vendor/autoload.php';
 
 $log = new Monolog\Logger('name');
-$log->pushHandler(new Monolog\Handler\StreamHandler('run_app.log', Monolog\Logger::ERROR));
+$log->pushHandler(new Monolog\Handler\StreamHandler('test.log', Monolog\Logger::ERROR));
 
-require __DIR__.'/../src/views/partials/header.php';
-$pdo = new PDO('mysql:dbname=check24;host=mysql', 'pyastolov', '123456', [PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION]);
+require __DIR__ . '/../src/templates/partials/header.php';
+$pdo = new PDO('mysql:dbname=test;host=mysql', 'pyastolov', '123456', [PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION]);
 
 $db = DB::getInstance('mysql', 'pyastolov', '123456', 'test');
 
-$routes = [
+$routes = [ // todo use another router
     new \DevCoder\Route('login', '/login', [LoginController::class]),
     new \DevCoder\Route(
         'articles_collection',
         '/articles',
-        [ArticleController::class, 'getAll']
+        [DashboardController::class, 'getAll']
     ),
     new \DevCoder\Route(
         'article',
         '/article/{id}',
-        [ArticleController::class, 'get']
+        [DashboardController::class, 'get']
     ),
     new \DevCoder\Route(
         'api_articles',
@@ -57,6 +57,6 @@ try {
     header("HTTP/1.0 404 Not Found");
 }
 
-require __DIR__ . '/../src/views/partials/footer.php';
+require __DIR__ . '/../src/templates/partials/footer.php';
 
 unset($pdo);
