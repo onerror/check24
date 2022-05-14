@@ -27,7 +27,7 @@
 <!-- Page content-->
 <div class="container">
     <div class="text-center mt-5">
-        <h1>404 Sorry, but we don't have such a page</h1>
+        <h1>Error occured: <?php echo($error); ?></h1>
     </div>
 </div>
 <!-- Bootstrap core JS-->
