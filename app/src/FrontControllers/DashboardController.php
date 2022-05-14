@@ -14,9 +14,10 @@ class DashboardController
     
     public static function mainPage()
     {
+        $endDate = (new \DateTimeImmutable('today'))->sub(new \DateInterval('P30D'));
         $data = [
-            'start' => (new \DateTimeImmutable('first day of this month'))->format(self::$dateFormatForDiagrams),
-            'end' => (new \DateTimeImmutable('last day of this month'))->format(self::$dateFormatForDiagrams)
+            'start' => $endDate->format(self::$dateFormatForDiagrams),
+            'end' => (new \DateTimeImmutable('today'))->format(self::$dateFormatForDiagrams),
         ];
         MainPageView::render($data);
     }

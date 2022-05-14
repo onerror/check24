@@ -34,6 +34,17 @@
 	<div class="text-center mt-5" id = "date_ranges_div">
 		<input type="text" name="stat_dates_filter" value="<?php echo ($data['start'].' - '.$data['end']); ?>"/>
 	</div>
+	
+	<div class="text-center mt-5" >
+		<h2 id="orders_tally">Orders</h2>
+	</div>
+	<div class="text-center mt-5" >
+		<h2 id="revenue">Revenue</h2>
+	</div>
+	<div class="text-center mt-5" >
+		<h2 id="customers_tally">Customers</h2>
+	</div>
+	
 	<div class="text-center mt-5">
 		<canvas id="dashboardChart" ></canvas>
 	</div>

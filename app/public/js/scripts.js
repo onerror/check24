@@ -1,8 +1,7 @@
 $(function ($) {
-	let xValues = ['01.10.2022', 200, 300, 400, 500, 600, 700, 800, 900, 1000];
+	let dates = ['01.10.2022', 200, 300, 400, 500, 600, 700, 800, 900, 1000];
 	let chart = new Chart("dashboardChart", {
 		type: "line",
-		//data: {},
 		options: {
 			legend: { display: false, autoUpdateInput: true, autoApply: true }
 		}
@@ -13,13 +12,12 @@ $(function ($) {
 			type: 'GET',
 			url: '/api/dashboard_data/' + start + '/' + end,
 			dataType: "json",
-			//data: { start: start, end: end },
 			success: function (result, textStatus, jqXHR) {
 				
 				let defaultData = {
-					labels: xValues,
+					labels: dates,
 					datasets: [{
-						data: result,
+						data: [7860, 1140, 1060, 1060, 1070, 1110, 1330, 2210, 7830, 2478],
 						borderColor: "red",
 						fill: false
 					}, {
@@ -38,15 +36,29 @@ $(function ($) {
 		});
 	}
 	
+	let renewIndicators = function (start, end) {
+		$.ajax({
+			type: 'GET',
+			url: '/api/dashboard_data/' + start + '/' + end,
+			dataType: "json",
+			success: function (result, textStatus, jqXHR) {
+				
+				$("#orders_tally").text("Orders: "+result["orders_count"]);
+				$("#customers_tally").text("Customers: "+result["customers_count"]);
+				$("#revenue").text("Revenue: "+result["revenue"]);
+			}
+		});
+	}
+	
 	
 	let dateRangePickerEl = $('input[name="stat_dates_filter"]');
 	let datesAr = dateRangePickerEl.val().split(' - ')
-	renewChart(datesAr[0], datesAr[1]);
+	renewIndicators(datesAr[0], datesAr[1]);
 	
 	dateRangePickerEl.daterangepicker({
 		opens: 'left'
 	}, function (start, end, label) {
-		renewChart(start, end);
+		renewIndicators(start, end);
 	});
 	
 	
