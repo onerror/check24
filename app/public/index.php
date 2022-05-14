@@ -11,7 +11,6 @@ require __DIR__ . '/../vendor/autoload.php';
 $log = new Monolog\Logger('name');
 $log->pushHandler(new Monolog\Handler\StreamHandler('run_app.log', Monolog\Logger::ERROR));
 
-require __DIR__.'/../src/views/partials/header.php';
 $pdo = new PDO('mysql:dbname=check24;host=mysql', 'pyastolov', '123456', [PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION]);
 
 $db = DB::getInstance('mysql', 'pyastolov', '123456', 'test');
@@ -40,7 +39,7 @@ try {
     
     $route = $router->matchFromPath($_SERVER['REQUEST_URI'], $_SERVER['REQUEST_METHOD']);
     
-    $parameters = $route->getParameters();
+    $parameters = $route->getParameters();git
     // $arguments = ['id' => 2]
     $arguments = $route->getVars();
     

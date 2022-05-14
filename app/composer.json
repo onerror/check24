@@ -1,5 +1,5 @@
 {
-    "name": "pyast/check24_task",
+    "name": "pyast/test_task",
     "autoload": {
         "psr-4": {
             "": "src/"
@@ -8,7 +8,7 @@
     "authors": [
         {
             "name": "e.pyastolov",
-            "email": "pyastolov.e.s@effective-group.ru"
+            "email": "pyastolov@gmail.com"
         }
     ],
     "require": {
@@ -16,9 +16,6 @@
         "ext-json": "*",
         "phpunit/phpunit": "^9.5",
         "ext-pdo": "*",
-        "voku/simple-active-record": "1.*",
-        "doctrine/orm": "*",
-        "devcoder-xyz/php-router": "^1.2",
-        "twig/twig": "2.0"
+        "bramus/router": "~1.6"
     }
 }
