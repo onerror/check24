@@ -117,7 +117,7 @@ class DashboardRepository extends AbstractRepository
                   where calendar_date between date(FROM_UNIXTIME(? / 1000)) and date(FROM_UNIXTIME(? / 1000))),
      purchase_data as (select date(o.purchase_date)       as purchase_date,
                               count(distinct (c.id))      as customers_tally,
-                              count(distinct (c.id))      as orders_tally
+                              count(distinct (o.id))      as orders_tally
                        from orders o
 	                            join customers c on c.id = o.customer_id
                        WHERE date(o.purchase_date) >= date(FROM_UNIXTIME(? / 1000))

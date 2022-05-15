@@ -40,7 +40,7 @@ try {
     });
     
     $router->run();
-} catch (Exception $e) {
+} catch (Throwable $e) {
     $log->error($e->getMessage(), $e->getTrace());
     ErrorPageView::render(['error' => 'An error happened, sorry ' . $e->getMessage()]);
 }
