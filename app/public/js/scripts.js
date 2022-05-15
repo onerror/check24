@@ -37,12 +37,13 @@ $(function ($) {
 	}
 	
 	let renewIndicators = function (start, end) {
+		console.log("start:"+start+"end:"+end);
 		$.ajax({
 			type: 'GET',
 			url: '/api/dashboard_data/' + start + '/' + end,
 			dataType: "json",
 			success: function (result, textStatus, jqXHR) {
-				
+				console.log(result["orders_count"]);
 				$("#orders_tally").text("Orders: "+result["orders_count"]);
 				$("#customers_tally").text("Customers: "+result["customers_count"]);
 				$("#revenue").text("Revenue: "+result["revenue"]);
@@ -53,7 +54,8 @@ $(function ($) {
 	
 	let dateRangePickerEl = $('input[name="stat_dates_filter"]');
 	let datesAr = dateRangePickerEl.val().split(' - ')
-	renewIndicators(datesAr[0], datesAr[1]);
+	
+	renewIndicators(new Date(datesAr[0]).valueOf(), new Date(datesAr[1]).valueOf());
 	
 	dateRangePickerEl.daterangepicker({
 		opens: 'left'

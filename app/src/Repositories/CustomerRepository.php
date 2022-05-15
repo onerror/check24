@@ -13,13 +13,13 @@ class CustomerRepository extends AbstractRepository
      */
     public function countBetweenDates(\DateTimeImmutable $start, \DateTimeImmutable $end): int
     {
-        var_dump($start->getTimestamp());
-        var_dump($end->getTimestamp());
         $stmt = $this->db->prepare(
             "
 select count(distinct (c.id))
 from customers c
-	     join orders o on c.id = o.customer_id WHERE date(o.purchase_date) >= date(?) and date(o.purchase_date) <= date(?)"
+	     join orders o on c.id = o.customer_id
+WHERE date(o.purchase_date) >= date(FROM_UNIXTIME(?/1000))
+  and date(o.purchase_date) <= date(FROM_UNIXTIME(?/1000));"
         );
         $stmt->execute([$start->getTimestamp(), $end->getTimestamp()]);
         return (int)$stmt->fetchColumn();
