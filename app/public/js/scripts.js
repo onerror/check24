@@ -27,7 +27,7 @@ $(function ($) {
 	let refreshIndicators = function (ordersCount, customersCount, revenue) {
 		$("#orders_tally").text("Orders: " + ordersCount);
 		$("#customers_tally").text("Customers: " + customersCount);
-		$("#revenue").text("Revenue: " + revenue+ "$");
+		$("#revenue").text("Revenue: " + revenue);
 	}
 	
 	
@@ -37,7 +37,7 @@ $(function ($) {
 			url: '/api/dashboard_data/' + start + '/' + end,
 			dataType: "json",
 			success: function (result, textStatus, jqXHR) {
-				refreshIndicators(result["orders_count"], result["customers_count"], result["revenue"] )
+				refreshIndicators(result["orders_count"], result["customers_count"], result["revenue"])
 				refreshChart(result['graph_dates'], result['orders_tally_graph'], result['customers_tally_graph']);
 			}
 		});
@@ -48,7 +48,8 @@ $(function ($) {
 	let datesAr = dateRangePickerEl.val().split(' - ')
 	
 	updateDashboardData(new Date(datesAr[0]).valueOf(), new Date(datesAr[1]).valueOf());
-	
+	console.log(new Date(datesAr[0]).valueOf());
+	console.log(new Date(datesAr[1]).valueOf());
 	dateRangePickerEl.daterangepicker({
 		opens: 'left'
 	}, function (start, end, label) {

@@ -43,6 +43,7 @@
       <excludeFolder url="file://$MODULE_DIR$/app/vendor/sebastian/lines-of-code" />
       <excludeFolder url="file://$MODULE_DIR$/app/vendor/sebastian/diff" />
       <excludeFolder url="file://$MODULE_DIR$/app/vendor/bramus/router" />
+      <excludeFolder url="file://$MODULE_DIR$/app/vendor" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

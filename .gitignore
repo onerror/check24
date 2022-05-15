@@ -1,5 +1,4 @@
 .env
-/app/.idea
 /app/vendor
 composer.phar
 composer.lock
@@ -8,3 +7,5 @@ composer.lock
 .DS_Store
 workspace.xml
 Thumbs.db
+/app/.idea/
+/app/information_schema/

@@ -26,9 +26,9 @@ class OrderRepository extends AbstractRepository
      * @param \DateTimeImmutable $start
      * @param \DateTimeImmutable $end
      *
-     * @return int
+     * @return string
      */
-    public function revenueBetweenDates(\DateTimeImmutable $start, \DateTimeImmutable $end): int
+    public function revenueBetweenDates(\DateTimeImmutable $start, \DateTimeImmutable $end): string
     {
         $stmt = $this->db->prepare(
             "select sum(oi.price * oi.quantity)
@@ -39,7 +39,7 @@ WHERE date(o.purchase_date) >= date(FROM_UNIXTIME(?/1000))
         );
         $stmt->execute([$start->getTimestamp(), $end->getTimestamp()]);
         $revenueCents = (int)$stmt->fetchColumn();
-        $revenueFormatted = ((int)floor($revenueCents/100)).'.'.($revenueCents%100);
+        $revenueFormatted = number_format((float)$revenueCents / 100, 2, '.', '');
         return $revenueFormatted;
     }
 }
