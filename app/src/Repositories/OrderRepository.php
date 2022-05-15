@@ -38,6 +38,8 @@ WHERE date(o.purchase_date) >= date(FROM_UNIXTIME(?/1000))
   and date(o.purchase_date) <= date(FROM_UNIXTIME(?/1000));"
         );
         $stmt->execute([$start->getTimestamp(), $end->getTimestamp()]);
-        return (int)$stmt->fetchColumn();
+        $revenueCents = (int)$stmt->fetchColumn();
+        $revenueFormatted = ((int)floor($revenueCents/100)).'.'.($revenueCents%100);
+        return $revenueFormatted;
     }
 }

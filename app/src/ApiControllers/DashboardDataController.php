@@ -24,7 +24,6 @@ class DashboardDataController
         $result['orders_tally_graph'] = array_column($graphData, 'orders_tally');
         $result['customers_tally_graph'] = array_column($graphData, 'customers_tally');
         header('Content-type: application/json');
-        // die (var_dump($data));
         echo(json_encode($result));
     }
 }

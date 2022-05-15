@@ -27,7 +27,7 @@ $(function ($) {
 	let refreshIndicators = function (ordersCount, customersCount, revenue) {
 		$("#orders_tally").text("Orders: " + ordersCount);
 		$("#customers_tally").text("Customers: " + customersCount);
-		$("#revenue").text("Revenue: " + revenue);
+		$("#revenue").text("Revenue: " + revenue+ "$");
 	}
 	
 	
