@@ -4,6 +4,7 @@ use ApiControllers\DashboardDataController;
 use Bramus\Router\Router;
 use FrontControllers\DashboardController;
 use Repositories\CustomerRepository;
+use Repositories\DashboardRepository;
 use Repositories\OrderRepository;
 use Views\ErrorPageView;
 
@@ -32,6 +33,7 @@ try {
         DashboardDataController::get(
             (new DateTimeImmutable())->setTimestamp((int)$start),
             (new DateTimeImmutable())->setTimestamp((int)$end),
+            new DashboardRepository($testDb),
             new OrderRepository($testDb),
             new CustomerRepository($testDb)
         );

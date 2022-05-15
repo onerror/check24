@@ -20,6 +20,14 @@ class OrderRepository extends AbstractRepository
         return (int)$stmt->fetchColumn();
     }
     
+    /**
+     *
+     *
+     * @param \DateTimeImmutable $start
+     * @param \DateTimeImmutable $end
+     *
+     * @return int
+     */
     public function revenueBetweenDates(\DateTimeImmutable $start, \DateTimeImmutable $end): int
     {
         $stmt = $this->db->prepare(
