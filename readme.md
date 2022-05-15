@@ -12,3 +12,4 @@
 - active record or data mapper or a proper drm
 - unit testing for new classes (no need for it now as the app really simple)
 - authentication and authorization and/or statistics depending on the purpose of this app
+- registry for db/log etc. No need when there's only one connection and one log
