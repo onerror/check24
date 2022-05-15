@@ -38,11 +38,12 @@ try {
             new CustomerRepository($testDb)
         );
     });
-} catch (Exception$e) {
+    
+    $router->run();
+} catch (Exception $e) {
     $log->error($e->getMessage(), $e->getTrace());
     ErrorPageView::render(['error' => 'An error happened, sorry ' . $e->getMessage()]);
 }
-$router->run();
 
 
 unset($testDb);
