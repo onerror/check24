@@ -6,6 +6,9 @@ use Repositories\CustomerRepository;
 use Repositories\DashboardRepository;
 use Repositories\OrderRepository;
 
+/**
+ *
+ */
 class DashboardDataController
 {
     public static function get(

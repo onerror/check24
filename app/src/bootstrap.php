@@ -1,5 +1,6 @@
 <?php
 
+use Registry\Registry;
 use Views\ErrorPageView;
 
 $loggerConfig = ['title' => 'name', 'file_name' => 'test.log'];
@@ -22,6 +23,9 @@ try {
         $testDbConfig['password'],
         $testDbConfig['options']
     );
+
+    Registry::set(Registry::LOGGER, $log);
+    Registry::set(Registry::DB, $testDb);
     
     require(__DIR__ . '/routes.php');
 } catch (Throwable $e) {
