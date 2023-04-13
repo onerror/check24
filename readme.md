@@ -1,4 +1,4 @@
-# Skill test for Boozt
+# Skill test for Boozt (successful)
 ## What the app does
 
 - a dashboard with three indicators and one graph
